@@ -10,7 +10,7 @@ async function getUser(id) {
 
 async function emailExists(email) {
   const user = await usersRepository.getUserByEmail(email);
-  return !!user; // Return true if user exists, false otherwise
+  return !!user;
 }
 
 async function createUser(email, password, fullName) {
@@ -19,6 +19,10 @@ async function createUser(email, password, fullName) {
 
 async function updateUser(id, email, fullName) {
   return usersRepository.updateUser(id, email, fullName);
+}
+
+async function changePassword(id, hashedPassword) {
+  return usersRepository.changePassword(id, hashedPassword);
 }
 
 async function deleteUser(id) {
@@ -31,5 +35,6 @@ module.exports = {
   emailExists,
   createUser,
   updateUser,
+  changePassword,
   deleteUser,
 };

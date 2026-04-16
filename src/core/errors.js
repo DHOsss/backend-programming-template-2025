@@ -43,7 +43,7 @@ const errorTypes = {
     message: 'Operation forbidden by security policy',
     status: 418,
     code: 'ALERT_ERROR',
-  }, // hacker tryout case errors
+  },
   FORBIDDEN: {
     description: 'Access forbidden',
     status: 403,
